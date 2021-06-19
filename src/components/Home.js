@@ -5,17 +5,17 @@ import { Link } from 'react-router-dom'
 
 const Home = () => {
     const state = useSelector(state => state.ProductReducer.products)
-    console.log(state)
+    // console.log(state)
     return (
         <div>
                 <h3>Home</h3>
-            <div>
+            <div className='product'>
                 {
                     state.map(product => (
                         <div key={product.id}>
                             <div className='products'>
-                                <div className='img'>
-                                     <Link to={`/detail/${product.id}`}><img src= {`/images/${product.image}`} alt='' /></Link>
+                                <div className='img' >
+                                     <Link to={`/detail/${product.id}`}><img src= {`/images/${product.image}`} alt='' width='200px' /></Link>
                                      </div>
                                  <div className='name'>
                                      {product.name}
