@@ -4,11 +4,13 @@
     background-color: rgb(221, 207, 221);
     height: 60px;
 }
-#basic-addon1 img{
+#logo img{
     padding-left:30px;
     width:90px;
  }
-
+ img:hover{
+     background-color: thistle;
+ }
 .home{
     display: flex;
     overflow: hidden;
@@ -31,6 +33,9 @@
 .col{
     display: flex;
     flex-wrap: wrap;
+}
+.card:hover{
+    background-color: thistle;
 }
 
 @media only screen and (max-width: 767px) {

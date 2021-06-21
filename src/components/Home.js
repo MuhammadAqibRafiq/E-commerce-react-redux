@@ -21,8 +21,8 @@ const Home = () => {
                             <Col className='col'>
                             <Card style={{ width: '15rem' }} className='card'>
 
-                                <Link to={`/detail/${product.id}`}  >
-                                    <Card.Img variant="top" src={`/images/${product.image}`} />
+                                <Link to={`/detail/${product.id}`}   >
+                                    <Card.Img variant="top" className="pic" src={`/images/${product.image}`} />
                                 </Link>
 
                                 <Card.Body>

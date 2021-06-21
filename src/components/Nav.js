@@ -15,7 +15,7 @@ function Nav() {
         <Form inline>
           <InputGroup>
             <InputGroup.Prepend>
-              <InputGroup id="basic-addon1"><img src={logo}   /></InputGroup>
+              <InputGroup id="logo"><img src={logo}   /></InputGroup>
             </InputGroup.Prepend>
           </InputGroup>
         </Form>
