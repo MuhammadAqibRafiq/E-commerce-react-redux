@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { AiOutlineShopping } from "react-icons/ai";
 import { useSelector } from 'react-redux';
 import { Navbar, Form, InputGroup } from 'react-bootstrap';
-import logo from './logo.jpg'
+import logo from './logo.png'
 
 function Nav() {
   const { totalquantity } = useSelector(state => state.CartReducer)
@@ -11,11 +11,11 @@ function Nav() {
   return (
     <div className='Nav'>
       
-      <Navbar className="bg-warning justify-content-between">
+      <Navbar className="navbar justify-content-between">
         <Form inline>
           <InputGroup>
             <InputGroup.Prepend>
-              <InputGroup.Text id="basic-addon1"><img src={logo} width='100px' height='50px' /></InputGroup.Text>
+              <InputGroup id="basic-addon1"><img src={logo}   /></InputGroup>
             </InputGroup.Prepend>
           </InputGroup>
         </Form>
@@ -23,7 +23,7 @@ function Nav() {
           <div className='basket'>
           <Link to='/cart'>
              <span>
-                 <AiOutlineShopping size='50' />
+                 <AiOutlineShopping size='40' />
              {totalquantity}</span>
              </Link>
              </div>
