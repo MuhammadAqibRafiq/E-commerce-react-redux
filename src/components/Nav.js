@@ -15,7 +15,8 @@ function Nav() {
         <Form inline>
           <InputGroup>
             <InputGroup.Prepend>
-              <InputGroup id="logo"><img src={logo}   /></InputGroup>
+            <Link to='/'>
+              <InputGroup id="logo"><img src={logo}   /></InputGroup></Link>
             </InputGroup.Prepend>
           </InputGroup>
         </Form>

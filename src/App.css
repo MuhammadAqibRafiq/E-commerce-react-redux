@@ -72,7 +72,11 @@
     color: black;
     background-color: rgb(215, 169, 248);
 }
-
+.cart__container{
+    padding-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
 
 @media only screen and (max-width: 767px) {
     .g-4{
