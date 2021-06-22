@@ -18,7 +18,9 @@ const Home = () => {
                     state.map(product => (
                         
                         <div key={product.id} className='product'>
-                            <Col className='col'>
+                           
+                            <Col className='col__first'>
+
                             <Card style={{ width: '15rem' }} className='card'>
 
                                 <Link to={`/detail/${product.id}`}   >

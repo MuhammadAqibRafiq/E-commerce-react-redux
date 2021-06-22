@@ -8,8 +8,9 @@
     padding-left:30px;
     width:90px;
  }
- img:hover{
+.card img:hover{
      background-color: thistle;
+     width: 250px;
  }
 .home{
     display: flex;
@@ -30,18 +31,60 @@
     flex-wrap: wrap;
 
 }
-.col{
+.col__first{
     display: flex;
     flex-wrap: wrap;
 }
 .card:hover{
     background-color: thistle;
+    overflow: hidden;
 }
+.detail__container{
+    display: flex;
+    /* justify-content: center; */
+    padding-top:80px ;
+    /* flex-wrap: wrap; */
+}
+.desc{
+    padding-top: 10px;
+}
+.quantity-detail{
+    padding-top: 50px;
+    /* justify-content: center; */
+}
+.btn:not(:disabled):not(.disabled) {
+    margin: 8px;
+}
+ #incQuan {
+     text-align: center;
+     font-size: 15px;
+    width: 50px;
+  border: 2px solid green;
+  padding: 10px;
+  margin: 2px;
+ } 
+.Add{
+    padding-top: 10px;
+    align-content: center;
+}
+.Add button{
+    /* display: flex; */
+    color: black;
+    background-color: rgb(215, 169, 248);
+}
+
 
 @media only screen and (max-width: 767px) {
     .g-4{
-        justify-content: center !important
+        justify-content: center !important;
     }
 }
+@media only screen and (max-width: 767px) {
+    .g-5{
+        justify-content: center !important;
+    }
+}
+
+
 
 
