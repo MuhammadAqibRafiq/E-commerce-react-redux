@@ -1,57 +1,77 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
-import { Button , Badge , Row, Col, Container } from 'react-bootstrap';
+import { useSelector , useDispatch } from 'react-redux'
+import { Button , Badge } from 'react-bootstrap';
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 
 const Cart = () => {
     const { totalprice, totalquantity, products } = useSelector(state => state.CartReducer)
-
+    // console.log(products)
+    const dispatch = useDispatch();
 
     return (
         <div className='cart__container'>
 
-<table className="table table-hover table-sm">
-  <thead className="thead-dark">
-    <tr>
-      <th scope="col">Image</th>
-      <th scope="col">Name</th>
-      <th scope="col">Price</th>
-      <th scope="col">Quantity</th>
-    </tr>
-  </thead>
-  <tbody >
-                {
-                    products.map(prod => {
-                        return (
-                        <tr classNam='cart__prod ' >
-                            <th scope="row"><img src={`/images/${prod.image}`} width='50px' /></th> 
-                            <td>{prod.name}</td>
-                            <td>{prod.price} </td>
-                            <td>{prod.quantity}</td>
+            {products.length > 0 ? <>
+
+                <table className="table table-hover table-sm">
+                    <thead className="thead-dark">
+                        <tr>
+                            <th scope="col">Image</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Inc/Dec</th>
+                            <th scope="col"></th>
+
                         </tr>
-                        )
-                    })
-                }
-  </tbody>
-</table>
+                    </thead>
+                    <tbody >
+                        {
+                            products.map((product,id) => {
+                                return (
+                                    <tr className='cart__prod ' key={id} >
+                                        <th scope="row"><img src={`/images/${product.image}`} width='50px' /></th>
+                                        <td>{product.name}</td>
+                                        <td>${product.price} </td>
+                                        <td>{product.quantity}</td>
+                                        <td> <div className='quantity-detail-cart'>
+                                            <Button variant="danger" onClick={()=>dispatch({type:'DEC' , payload: product.id})} >
+                                                Inc <Badge variant="light">-</Badge>
+                                            </Button>
+                                            <span id='incQuan'>{product.quantity}</span>
+                                            <Button variant="primary" onClick={()=>dispatch({type:'INC' , payload: product.id})} >
+                                                Dec <Badge variant="light">+</Badge>
+                                            </Button>
+                                        </div></td>
+                                        <td onClick={()=> dispatch({type:"DELETE", payload: product.id})}>< DeleteForeverIcon/></td>
+
+                                    </tr>
+                                )
+                            })
+                        }
+                    </tbody>
+                </table>
 
 
-<table className="table">
+                <table className="table">
 
-    <thead className='thead-dark table-sm'>
-    <tr>
-      <th scope="row">TOTAL QUANTITY</th>
-      <th scope="row">TOTAL AMOUNT</th>
-    </tr>
-    </thead>
+                    <thead className='thead-dark table-sm'>
+                        <tr>
+                            <th scope="row">TOTAL QUANTITY</th>
+                            <th scope="row">TOTAL AMOUNT</th>
+                        </tr>
+                    </thead>
 
-    <tbody>
-    <tr>
-                    <td>{totalquantity} </td>     
-                    <td>${totalprice}</td>
-     </tr>
-    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>{totalquantity} </td>
+                            <td>${totalprice}</td>
+                        </tr>
+                    </tbody>
 
-</table>
+                </table>
+
+            </> : "Your Cart Is Empty"}
 
             {/* Without css */}
 

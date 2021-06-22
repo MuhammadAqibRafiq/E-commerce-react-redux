@@ -24,13 +24,15 @@ const Details = () => {
  
             <div className='detail'>
                 <Row className="g-5">
-                           
+               
+                   
                         <div className='image-detail' >
                         <Col className='col__second'>
                             <img src={`/images/${product.image}`} alt='' width='300px' />
-                            </Col>
+                             </Col>
                         </div>
                    
+
                     <Col className="col__third">
 
                         <div className='name-detail'>

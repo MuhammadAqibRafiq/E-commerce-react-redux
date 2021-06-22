@@ -16,7 +16,7 @@ function Nav() {
           <InputGroup>
             <InputGroup.Prepend>
             <Link to='/'>
-              <InputGroup id="logo"><img src={logo}   /></InputGroup></Link>
+              <InputGroup id="logo"><img src={logo} alt=''  /></InputGroup></Link>
             </InputGroup.Prepend>
           </InputGroup>
         </Form>
